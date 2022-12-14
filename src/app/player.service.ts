@@ -24,7 +24,10 @@ export class PlayerService {
     var randNumber = Math.random() * 6 + 1;
     var rand = Math.floor(randNumber);
     player.diceValue = rand;
-    player.atValue += rand;
+    if((player.atValue + rand) <= 100){
+      player.atValue += rand;
+    }
+    
     // if (player.atValue ===  )
     // console.log(player.atValue)
     if (this.blocks[player.atValue].isSnakeHead){
@@ -33,15 +36,15 @@ export class PlayerService {
     if (this.blocks[player.atValue].isLadderTail){
       player.atValue=this.blocks[player.atValue].LadderHead;
     }
-    if (player.atValue>100){
-      player.atValue-=rand;
-    }
+    // if (player.atValue>100){
+    //   player.atValue-=rand;
+    // }
     if(player.atValue == 100){
       console.log("Player won");
     }
     this.player1.isActive = !this.player1.isActive;
     this.player2.isActive = !this.player2.isActive;
-    // this.blocks[player.atValue]
+    this.blocks[player.atValue]
     return player;
   }
 

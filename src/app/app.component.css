@@ -16,6 +16,9 @@ h2 {
     font-family: 'Indie Flower', cursive;
   }
 
+  .feature-box{
+    text-align: center;
+  }
 .heading{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 text-align: center;

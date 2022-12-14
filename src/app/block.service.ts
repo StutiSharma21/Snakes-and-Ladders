@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { withRouterConfig } from '@angular/router';
 import { IBlock } from './block';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +11,22 @@ export class BlockService {
   
     blocks : IBlock[] = [];
     constructor(){
-      for(let i = 1 ; i <= 100 ; i++){
+
+      this.blocks.push({
+        "value" : 0,
+        "isSnakeHead" : false,
+        "SnakeTail" : 0,
+        "LadderHead" : 0,
+        "isLadderTail" : false,
+      }
+      )
+      for(let i = 1; i <= 100 ; i++){
           let newBlock = {
             "value" : i,
             "isSnakeHead" : false,
             "SnakeTail" : 0,
             "LadderHead" : 0,
-            "isLadderTail" : false
+            "isLadderTail" : false,
           };
           this.blocks.push(newBlock);
         }

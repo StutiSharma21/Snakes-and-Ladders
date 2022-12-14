@@ -8,22 +8,24 @@
     <div class="row">
       <div class="feature-box col-lg-4">
         <h3 class="feature-title">Player1</h3>
-        <p>This is Player 1</p>
-        <app-player1></app-player1>
+        <p>🔴</p>
+        <app-player1 (playerValue1) = "p1=$event"></app-player1>
       </div>
 
       <div class="feature-box col-lg-4">
         <h3 class="feature-title">Board</h3>
-        <p>This is the board</p>
-        <app-board></app-board>
+        <p></p>
+        <app-board [p1Value]="p1" [p2Value]="p2" ></app-board>
       </div>
 
       <div class="feature-box col-lg-4">
         <h3 class="feature-title">Player2</h3>
-        <p>This is player 2</p>
-        <app-player2></app-player2>
+        <p>🔵</p>
+        <app-player2 (playerValue2) = "p2=$event"></app-player2>
       </div>
     </div>
 
   </div>
 </section>
+
+<!-- {{p1}} -->

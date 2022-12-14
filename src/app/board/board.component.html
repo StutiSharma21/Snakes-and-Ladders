@@ -1,5 +1,25 @@
 <table>
     <tr *ngFor="let i of bindex">
-        <td *ngFor = "let block of blocks.slice(i-1,i+9)">{{block.value}}</td>
+        <td *ngFor = "let block of blocks.slice(i,i+10)">{{block.value}}
+            
+            <span *ngIf="(block.isSnakeHead)==true">🐍</span>
+            <span *ngIf="block.isLadderTail==true">⭐</span>
+            <span *ngIf="p1Value==block.value" style="background-color: red;" class="dot"></span>
+            <span *ngIf="p2Value==block.value" style="background-color: blue;" class="dot"></span>
+        
+        </td>
     </tr>
 </table>
+
+<!-- {{p1Value}} -->
+<!-- 
+<table>
+    <tr *ngFor="let i of bindex">
+        <td *ngFor = "let block of blocks.slice(i-1,i+9)" >{{block.value}}
+            <span *ngIf="block.isSnakeHead==true" style="background-color: green;" class="dot">🐍</span>
+            <span *ngIf="block.isLadderTail==true" style="background-color: brown;" class="dot">⭐</span>
+            <span *ngIf="p1Value==block.value" style="background-color: red;" class="dot"></span>
+            <span *ngIf="p2Value==block.value" style="background-color: blue;" class="dot"></span>
+        </td>
+    </tr>
+</table> -->

@@ -1,9 +1,17 @@
+ table{
+  table-layout:fixed;
+  margin: auto;
+ }
+ 
  td {
-    padding: 9px;
-    border:1px solid black;
+    padding: 10px;
+    border:2px solid black;
+    word-wrap:break-word;
   }
 
-  /* table, th, td {
-    padding: 1px;
-    border:1px solid black;
-  } */
+  .dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }

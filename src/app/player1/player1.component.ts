@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { IPlayer } from '../player';
 import { PlayerService } from '../player.service';
 
@@ -10,11 +10,13 @@ import { PlayerService } from '../player.service';
 export class Player1Component implements OnInit {
 
   constructor(private _playerService : PlayerService) { }
-
+  @Output() playerValue1=new EventEmitter();
   player1 : IPlayer = this._playerService.getPlayer1();
+  position1=this.player1.atValue;
 
   onClick(){
     this.player1 = this._playerService.onClick(this.player1);
+    this.playerValue1.emit(this.player1.atValue);
     
   }
 
